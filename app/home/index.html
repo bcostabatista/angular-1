@@ -1,0 +1,102 @@
+<div class="row">
+  <div class="col-lg-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><i class="glyphicon glyphicon-home"></i> Home</h3>
+      </div>
+      <div class="panel-body">
+        <div ng-if="error" class="alert alert-danger">{{msg}}</div>
+        <form ng-submit="submit()">
+          <div class="row">
+            <div class="col-lg-12">
+              <label>Would you tell me your name?</label>
+              <input type="text" class="form-control" ng-model="user.name" placeholder="Let me guess, hmmm... John?"/>
+            </div>
+            <div class="col-lg-12">
+              <div class="btn-group pull-right">
+                <button type="submit" class="btn btn-primary">
+                  <i class="glyphicon glyphicon-ok"></i> Of course!
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div ui-view="user"></div>
+  </div>
+  <div class="col-lg-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><i class="glyphicon glyphicon-piggy-bank"></i> Do the math</h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-lg-3">
+            <label>#1</label>
+            <input type="number" class="form-control" ng-keyup="sum()" ng-model="math.num1" placeholder="Ex: 100" />
+          </div>
+          <div class="col-lg-3">
+            <label>#2</label>
+            <input type="number" class="form-control" ng-keyup="sum()" ng-model="math.num2" placeholder="Ex: 100" />
+          </div>
+          <div class="col-lg-3">
+            <label>#3</label>
+            <input type="number" class="form-control" ng-keyup="sum()" ng-model="math.num3" placeholder="Ex: 100" />
+          </div>
+          <div class="col-lg-3">
+            <label>#4</label>
+            <input type="number" class="form-control" ng-keyup="spread()" ng-model="math.num4" placeholder="Ex: 300" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><i class="glyphicon glyphicon-retweet"></i> Directives</h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-lg-6">
+            <label>Phone number</label>
+            <input type="text" class="form-control" maxlength="14" ng-model="directive.phone" placeholder="Ex: (123) 456-7890" phone-number/>
+          </div>
+          <div class="col-lg-6">
+            <label>Currency</label>
+            <input type="text" class="form-control" ng-model="directive.currency" placeholder="Ex: 378.90" currency />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><i class="glyphicon glyphicon-transfer"></i> A wild kangaroo appears, jumping, jumping, it goes!</h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-lg-4">
+            <label>1st Burpee:</label>
+            <input type="text" class="form-control" maxlength="5" id="input-1" tabindex="1" placeholder="Type anything" jumper />
+          </div>
+          <div class="col-lg-4">
+            <label>2nd Burpee:</label>
+            <input type="text" class="form-control" maxlength="5" id="input-2" tabindex="2" placeholder="Type anything" jumper />
+          </div>
+          <div class="col-lg-4">
+            <label>3rd Burpee:</label>
+            <input type="text" class="form-control" maxlength="5" id="input-3" tabindex="3" placeholder="Type anything" jumper />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-12">
+    <div ui-view="history"></div>
+  </div>
+</div>

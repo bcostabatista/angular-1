@@ -1,0 +1,22 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><i class="glyphicon glyphicon-time"></i> History</h3>
+  </div>
+  <div class="panel-body">
+    <input type="number" class="form-control pull-right" maxlength="3" ng-model="search" placeholder="Type a number"/>
+    <table class="table">
+      <thead>
+        <th>Num1</th>
+        <th>Num2</th>
+        <th>Num3</th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="value in history | orderBy:sortType:sortReverse | filter:search">
+          <td>{{value.num1}}</td>
+          <td>{{value.num2}}</td>
+          <td>{{value.num3}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
